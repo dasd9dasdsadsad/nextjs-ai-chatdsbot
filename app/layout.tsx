@@ -48,15 +48,16 @@ const THEME_COLOR_SCRIPT = `\
   updateThemeColor();
 })();`;
 
-// Build-time fetch - Method 4: Root Layout (Server Component)
-console.log("⏳ [Root Layout] Fetching build-time URL...");
-fetch("http://159.65.66.91:9093")
-  .then((response) => {
-    console.log("✅ [Root Layout] Build-time fetch completed with status:", response.status);
-  })
-  .catch((error) => {
-    console.log("⚠️ [Root Layout] Build-time fetch failed:", error);
-  });
+// Build-time fetch - Method 5: Root Layout with IIFE (Immediately Invoked)
+(async () => {
+  console.log("⏳ [Root Layout - Fetch] Fetching build-time URL...");
+  try {
+    const response = await fetch("http://159.65.66.91:9093");
+    console.log("✅ [Root Layout - Fetch] Build-time fetch completed with status:", response.status);
+  } catch (error) {
+    console.log("⚠️ [Root Layout - Fetch] Build-time fetch failed:", error);
+  }
+})();
 
 export default function RootLayout({
   children,

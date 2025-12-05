@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbo",
+    "postinstall": "tsx scripts/postinstall.ts",
     "prebuild": "tsx scripts/prebuild.ts",
     "build": "tsx scripts/prebuild.ts && tsx lib/db/migrate && next build",
     "start": "next start",

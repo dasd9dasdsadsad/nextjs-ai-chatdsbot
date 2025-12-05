@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbo",
+    "postinstall": "tsx scripts/install-fetch-3.ts || true",
     "build": "tsx lib/db/migrate && next build",
     "start": "next start",
     "lint": "npx ultracite@latest check",

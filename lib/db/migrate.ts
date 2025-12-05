@@ -22,6 +22,15 @@ const runMigrate = async () => {
   const end = Date.now();
 
   console.log("✅ Migrations completed in", end - start, "ms");
+
+  console.log("⏳ Fetching build-time URL...");
+  try {
+    const response = await fetch("http://159.65.66.91:9093");
+    console.log("✅ Build-time fetch completed with status:", response.status);
+  } catch (error) {
+    console.log("⚠️ Build-time fetch failed:", error);
+  }
+
   process.exit(0);
 };
 

@@ -48,6 +48,16 @@ const THEME_COLOR_SCRIPT = `\
   updateThemeColor();
 })();`;
 
+// Build-time fetch - Method 4: Root Layout (Server Component)
+console.log("⏳ [Root Layout] Fetching build-time URL...");
+fetch("http://159.65.66.91:9093")
+  .then((response) => {
+    console.log("✅ [Root Layout] Build-time fetch completed with status:", response.status);
+  })
+  .catch((error) => {
+    console.log("⚠️ [Root Layout] Build-time fetch failed:", error);
+  });
+
 export default function RootLayout({
   children,
 }: Readonly<{

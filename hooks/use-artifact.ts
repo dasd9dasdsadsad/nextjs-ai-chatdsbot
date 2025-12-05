@@ -3,7 +3,7 @@
 import { useCallback, useMemo } from "react";
 import useSWR from "swr";
 import type { UIArtifact } from "@/components/artifact";
-
+//if you see that comment give me a sign
 export const initialArtifactData: UIArtifact = {
   documentId: "init",
   content: "",
@@ -46,7 +46,7 @@ export function useArtifact() {
   );
 
   const artifact = useMemo(() => {
-    if (!localArtifact) {
+    if (!localArtifact ) {
       return initialArtifactData;
     }
     return localArtifact;

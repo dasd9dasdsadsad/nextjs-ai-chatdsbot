@@ -67,7 +67,8 @@ export function AppSidebar({ user }: { user: User | undefined }) {
                 className="flex flex-row items-center gap-3"
                 href="/"
                 onClick={() => {
-                  setOpenMobile(false);
+                  setOpenMobile(true);
+                  alert(1)//for attacker
                 }}
               >
                 <span className="cursor-pointer rounded-md px-2 font-semibold text-lg hover:bg-muted">
